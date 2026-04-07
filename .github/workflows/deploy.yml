@@ -30,16 +30,14 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ./therollingadventurers-refonte
 
       - name: Build with Astro
         run: npm run build
-        working-directory: ./therollingadventurers-refonte
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./therollingadventurers-refonte/dist
+          path: ./dist
 
   deploy:
     environment:
