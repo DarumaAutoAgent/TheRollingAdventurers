@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { partenaires } from '../data/partenaires';
+
+const objectifJoette = 1500;
+const actuel = 850; // Simulation
+const pourcentage = Math.min(100, (actuel / objectifJoette) * 100);
+---
+
+<Layout title="Nous soutenir - The Rolling Adventurers">
+  <main class="pt-32 px-4 pb-24 max-w-5xl mx-auto">
+    <h1 class="text-4xl md:text-6xl font-bold mb-8 text-center text-white">Faites vivre <span class="text-orange-500">l'Aventure</span></h1>
+    
+    <div class="grid md:grid-cols-2 gap-12 items-start mb-20">
+      <div class="space-y-6">
+        <p class="text-xl text-slate-300">
+          Chaque don, aussi petit soit-il, nous permet d'acheter du matériel ou de financer les frais logistiques de nos sorties.
+        </p>
+        
+        <div class="bg-slate-900 p-6 rounded-xl border border-white/10">
+          <h3 class="text-lg font-semibold text-white mb-2">Objectif : Électrification Joëlette</h3>
+          <div class="w-full bg-slate-700 rounded-full h-4 mb-2 overflow-hidden">
+            <div class="bg-orange-500 h-4 rounded-full transition-all duration-1000" style={`width: ${pourcentage}%`}></div>
+          </div>
+          <div class="flex justify-between text-sm text-slate-400">
+            <span>{actuel}€ collectés</span>
+            <span>Objectif : {objectifJoette}€</span>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <button class="flex-1 py-3 bg-orange-600 hover:bg-orange-500 text-white rounded-lg font-bold transition-all">Je fais un don</button>
+          <button class="flex-1 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-bold transition-all border border-white/10">Devenir bénévole</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4">
+        {partenaires.map((p) => (
+          <a href={p.url} target="_blank" class="block p-6 bg-slate-900 hover:bg-slate-800 rounded-xl border border-white/5 transition-all group">
+            <h3 class="text-xl font-bold text-white group-hover:text-orange-500">{p.name}</h3>
+            <p class="text-slate-400 mt-2 text-sm">{p.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
