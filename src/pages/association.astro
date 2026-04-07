@@ -7,16 +7,22 @@ import Layout from '../layouts/Layout.astro';
   <main class="pt-32 px-4 pb-24 max-w-4xl mx-auto">
     <h1 class="text-4xl md:text-6xl font-bold mb-8 text-white">Notre <span class="text-orange-500">Histoire</span></h1>
     
-    <article class="prose prose-invert prose-lg max-w-none">
-      {asso ? (
-        <astro-island client:load>
-          <div class="whitespace-pre-line text-slate-300">
-            {asso.body}
-          </div>
-        </astro-island>
-      ) : (
-        <p>Chargement du contenu...</p>
-      )}
+    <article class="prose prose-invert prose-lg max-w-none text-slate-300">
+      <p>
+        Créée en <strong>mars 2021</strong> par un groupe d’amis et de parents d’enfants en situation de handicap, 
+        l’Association <strong>The Rolling Adventurers</strong> est née d'une envie simple : rendre l'aventure accessible à tous.
+      </p>
+      <p>
+        Notre objet est de promouvoir et de favoriser la <strong>mobilité</strong> de personnes à mobilité réduite par :
+      </p>
+      <ul>
+        <li>L’acquisition de matériels d’aide à la mobilité (joëlettes, snowkarts, etc.).</li>
+        <li>L’organisation de sorties et d'expéditions (ski, randonnée, parapente, plongée...).</li>
+        <li>La recherche de financements pour soutenir ces actions ambitieuses.</li>
+      </ul>
+      <p>
+        Nous croyons que le handicap ne doit pas être une barrière à la découverte du monde.
+      </p>
     </article>
 
     <div class="mt-16 p-8 bg-slate-900 rounded-2xl border border-white/5">
