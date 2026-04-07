@@ -1,6 +1,5 @@
 ---
 import Navbar from '../components/Navbar.astro';
-import '/src/styles/global.css';
 
 interface Props {
   title: string;
@@ -18,9 +17,10 @@ const { title, description = "The Rolling Adventurers - Association pour la mobi
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>{title}</title>
   </head>
-  <body class="bg-slate-950 text-slate-100 font-sans antialiased">
+  <body class="bg-slate-950 text-slate-100 font-sans">
     <Navbar />
     <slot />
   </body>
